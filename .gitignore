@@ -16,6 +16,7 @@ env/
 myvenv/
 
 # Data files
+ data/*.dvc
 data/MachineLearningRating_v3.txt
 
 # VS Code settings
