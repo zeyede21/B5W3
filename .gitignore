@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+__pycache__/
+*.pyc
+.DS_Store
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv
+env/
+myvenv/
+
+# Data files
+data/MachineLearningRating_v3.txt
+
+# VS Code settings
+.vscode/
+
+# Mac & system files
+.DS_Store
+Thumbs.db
