@@ -10,16 +10,12 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Environments
-.env
-.venv
-env/
-myvenv/
-
-# Data files
+# .gitignore
 /data/
 tvenv/
 *.dll
- data/*.dvc
+*.csv
+
 data/MachineLearningRating_v3.txt
 
 # VS Code settings
