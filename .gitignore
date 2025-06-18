@@ -16,6 +16,9 @@ env/
 myvenv/
 
 # Data files
+/data/
+tvenv/
+*.dll
  data/*.dvc
 data/MachineLearningRating_v3.txt
 
