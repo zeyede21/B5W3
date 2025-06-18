@@ -22,6 +22,12 @@ def load_data(filepath):
 def feature_engineering(df):
     df = df.copy()
 
+    # ✅ Ensure 'TransactionMonth' is datetime
+    if 'TransactionMonth' in df.columns:
+        df['TransactionMonth'] = pd.to_datetime(df['TransactionMonth'], errors='coerce')
+    else:
+        raise ValueError("🚨 'TransactionMonth' column is missing!")
+
     # Clean numeric columns
     numeric_cols = ['TotalPremium', 'TotalClaims', 'CustomValueEstimate']
     for col in numeric_cols:
@@ -44,9 +50,11 @@ def feature_engineering(df):
     for col in cat_cols:
         df[col] = df[col].astype(str).str.strip()
 
-    df_encoded = pd.get_dummies(df, columns=cat_cols, drop_first=True)
+    # ✅ FIX: Keep all dummy columns (prevent SHAP/column mismatch issues)
+    df_encoded = pd.get_dummies(df, columns=cat_cols, drop_first=False)
 
     return df_encoded
+
 
 # ---------- 3. Split Data ----------
 def prepare_train_test(df_encoded):
